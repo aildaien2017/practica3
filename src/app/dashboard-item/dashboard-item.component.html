@@ -1,0 +1,32 @@
+      <div class="col-sm-6">
+        
+        <div class="media block-update-card">
+            
+            <img class="media-object update-card-MDimentions pull-left" *ngIf="userParam.pictureURL" mat-list-avatar 
+            [src]="userParam.pictureURL"
+            (mouseenter)="onMouseEnterUser(userParam)">
+            <img class="media-object update-card-MDimentions" *ngIf="!userParam.pictureURL" mat-list-avatar 
+            [src]="defaultPictureURL">
+            
+            <div class="media-body update-card-body">
+              <h3 mat-line class="media-heading">{{userParam.firstName}} {{userParam.lastName}}</h3>
+              <p mat-line>{{userParam.email}}</p>
+              <p mat-line>{{userParam.gender}}</p>
+              <p mat-line>{{userParam.street}} - {{userParam.city}}</p>
+            </div>
+            <div class="text-right">
+                <a href="user/{{userParam.id}}/edit" class="btn btn-primary">Edit</a>
+                <button class="btn btn-danger pull-right"
+                        (click)="onDelete(userParam.id)">
+                  Delete
+                </button>
+              </div>
+          </div>
+
+         
+        
+      </div>
+      
+    
+
+  

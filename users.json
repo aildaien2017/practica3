@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Carlos",
+      "lastName": "Lopez",
+      "street": "Av. Circunvalacion",
+      "city": "Cochabamba",
+      "gender": "male",
+      "email": "alain@gmail.com",
+      "pictureURL": "http://www.newsshare.in/wp-content/uploads/2017/04/Miniclip-8-Ball-Pool-Avatar-15.jpg",
+      "nameCopy": "Alain"
+    },
+    {
+      "id": 2,
+      "firstName": "Marcelo",
+      "lastName": "Flores",
+      "street": "Av. Melchor Perez",
+      "city": "La Paz",
+      "gender": "male",
+      "email": "alain2@gmail.com",
+      "pictureURL": "https://img00.deviantart.net/e4a2/i/2016/096/f/7/avatar_icon_by_astrolink247-d9xxs6r.jpg",
+      "nameCopy": "Carlos"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+<div class="container" *ngIf="user">
+    <header class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/new">Add New</a>
+            </li>
+            
+          </ul>
+        </nav>
+      </header>
+
+        <h2>Edit: {{user['firstName']}} {{user['lastName']}}</h2>
+
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{{box.value}}" class="img-thumbnail" name="pictureURL">
+            </div>
+          <div class="col-md-9">
+              <form (ngSubmit)="onSave(user)" #userForm="ngForm">
+                  
+                  <div class="form-group" [ngClass]="{'has-error': firstName.invalid && firstName.touched}">
+                    <label for="firstName" class="control-label">
+                      First Name
+                    </label>
+                    <input type="text" class="form-control" name="firstName" [(ngModel)]="user.firstName" #firstName="ngModel" required>
+                      
+                    <div [hidden]="firstName.valid || firstName.pristine" class="text-danger">
+                      First Name is required
+                    </div>
+                  </div>
+              
+                  <div class="form-group" [ngClass]="{'has-error': lastName.invalid && lastName.dirty}">
+                    <label for="lastName" class="control-label">
+                      Last Name
+                    </label>
+                    <input type="text" class="form-control" name="lastName" [(ngModel)]="user.lastName" #lastName="ngModel" required>
+                      
+                    <div [hidden]="lastName.valid || lastName.pristine" class="text-danger">
+                      Last Name is required
+                    </div>
+                  </div>
+              
+                  <div class="form-group" [ngClass]="{'has-error': street.invalid && street.dirty}">
+                    <label for="street" class="control-label">
+                      Street
+                    </label>
+                    <input type="text" class="form-control" name="street" [(ngModel)]="user.street" #street="ngModel" required>
+                      
+                    <div [hidden]="street.valid || street.pristine" class="text-danger">
+                      Street is required
+                    </div>
+                  </div>
+              
+                  <div class="form-group" [ngClass]="{'has-error': city.invalid && city.dirty}">
+                    <label for="city" class="control-label">
+                      City
+                    </label>
+                    <input type="text" class="form-control" name="city" [(ngModel)]="user.city" #city="ngModel" required>
+                      
+                    <div [hidden]="city.valid || city.pristine" class="text-danger">
+                      City is required
+                    </div>
+                  </div>
+              
+                  <div class="form-group" [ngClass]="{'has-error': gender.invalid && gender.dirty}">
+                    <label for="gender" class="control-label">
+                      Gender
+                    </label>
+                    <input type="text" class="form-control" name="gender" [(ngModel)]="user.gender" #gender="ngModel" required>
+                      
+                    <div [hidden]="gender.valid || gender.pristine" class="text-danger">
+                      Gender is required
+                    </div>
+                  </div>
+              
+                  <div class="form-group" [ngClass]="{'has-error': email.invalid && email.dirty}">
+                    <label for="email" class="control-label">
+                      Email
+                    </label>
+                    <input type="text" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required>
+                      
+                    <div [hidden]="email.valid || email.pristine" class="text-danger">
+                      Email is required
+                    </div>
+                  </div>
+              
+                  <div class="form-group" [ngClass]="{'has-error': pictureURL.invalid && pictureURL.dirty}">
+                    <label for="pictureURL" class="control-label">
+                      Picture URL
+                    </label>
+                    <input #box (keyup)="0" type="text" class="form-control" name="pictureURL" [(ngModel)]="user.pictureURL" #pictureURL="ngModel" required>
+                      
+                    <div [hidden]="pictureURL.valid || pictureURL.pristine" class="text-danger">
+                      Picture URL is required
+                    </div>
+                  </div>
+                  
+                  <button class="btn btn-success" type="submit" [disabled]="userForm.form.invalid">
+                      Save
+                  </button>
+                  <button class="btn btn-info" [routerLink]="['/dashboard']" >
+                    Cancel
+                </button>
+                </form>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      <!-- <pre>
+        {{movie | json}}
+      </pre> -->

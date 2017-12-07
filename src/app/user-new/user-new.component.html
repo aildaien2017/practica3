@@ -1,0 +1,91 @@
+<div class="container">
+    <header class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/new">Add New</a>
+            </li>
+            
+          </ul>
+        </nav>
+      </header>
+    <h2>Insert New User</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <img src="{{box.value}}" class="img-thumbnail" name="pictureURL">
+        </div>
+        <div class="col-md-9">
+          <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <div class="form-group">
+              <label for="firstName" class="control-label">
+                First Name
+              </label>
+              <input type="text" class="form-control" id="firstName" name="firstName" ngModel required>
+              
+            </div>
+                  
+            <div class="form-group">
+              <label for="lastName" class="control-label">
+                Last Name
+              </label>
+              <input type="text" class="form-control" name="lastName" ngModel required>
+              
+            </div>
+        
+            <div class="form-group">
+              <label for="street" class="control-label">
+                Street
+              </label>
+              <input type="text" class="form-control" name="street" ngModel required>
+              
+            </div>
+        
+            <div class="form-group">
+              <label for="city" class="control-label">
+                City
+              </label>
+              <input type="text" class="form-control" name="city" ngModel required>
+              
+            </div>
+        
+            <div class="form-group">
+              <label for="gender" class="control-label">
+                Gender
+              </label>
+              <input type="text" class="form-control" name="gender" ngModel required>
+              
+            </div>
+        
+            <div class="form-group">
+              <label for="email" class="control-label">
+                Email
+              </label>
+              <input type="text" class="form-control" name="email" ngModel required>
+              
+            </div>
+        
+            <div class="form-group">
+              <label for="pictureURL" class="control-label">
+                Picture URL
+              </label>
+              <input #box (keyup)="0" type="text" class="form-control" name="pictureURL" ngModel required>
+                            
+            </div>
+            
+            <button class="btn btn-success" type="submit">
+                Save
+            </button>
+            <button class="btn btn-info" [routerLink]="['/dashboard']" >
+              Cancel
+          </button>
+          </form>
+        </div>
+      </div>
+  </div>
+  
+  <!-- <pre>
+    {{movie | json}}
+  </pre> -->
